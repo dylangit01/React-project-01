@@ -4,6 +4,9 @@ import Card from "./Card";
 
 // if below not be whiten as a class, can be a function syntax
 const CardList = ({robots}) => {        //since in index.js, CardList receives robots from Robots.js, so here, we can destructure it and say we have access to it
+    // if (true) {
+    //     throw new Error('Noooooo!!')
+    // }
     return (
         <div>
             {
