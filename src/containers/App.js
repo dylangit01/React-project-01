@@ -1,17 +1,33 @@
 import React, {Component} from "react";
+import {connect} from 'react-redux';
 import CardList from "../components/CardList";
 import SearchBox from '../components/SearchBox';
 import './App.css';
 import Scroll from '../components/Scroll'
 import ErrorBoundry from "../components/ErrorBoundry";
 
+import {setSearchField} from "../actions";
+
+const mapStateToProps = (state) => {
+    return {
+        searchField: state.searchField
+    }
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onSearchChange: (event) => dispatch(setSearchField(event.target.value))
+    }
+};
+
+
 class App extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             // in real project, data list is empty at the beginning, through fetch to update the state
             robots: [],
-            searchField: ''
+            // searchField: ''
         }
     }
 
@@ -25,23 +41,24 @@ class App extends Component {
             .then(users => this.setState({robots: users}))
     }
 
-    onSearchChange = (event) => {
-        this.setState({searchField: event.target.value})
-    };
+    // onSearchChange = (event) => {
+    //     this.setState({searchField: event.target.value})
+    // };
 
     render() {
-        const {robots, searchField} = this.state
+        const {robots} = this.state;
+        const {searchField, onSearchChange} = this.props;
         const filteredRobots = robots.filter(robot => {
-            return robot.name.toLowerCase().indexOf(searchField.toLowerCase()) > -1
-            // return robot.name.toLowerCase().includes(this.state.searchField.toLowerCase())
+            // return robot.name.toLowerCase().indexOf(searchField.toLowerCase()) > -1
+            return robot.name.toLowerCase().includes(searchField.toLowerCase())
         });
         // Below if function is to show "Loading" when long time fetching from the web to get the data;
 
-        return (!robots.length) ?
+        return !robots.length ?
             <h1>Loading</h1> :
             <div className='tc'>
                 <h1 className='f1'>RoboFriends</h1>
-                <SearchBox searchChange={this.onSearchChange}/>
+                <SearchBox searchChange={onSearchChange}/>
 
                 {/*In React, one thing is called "children", and below <CardList/> is the children of <Scroll></Scroll>*/}
                 {/*"Scroll" can use "children" as a way to render its children*/}
@@ -55,4 +72,4 @@ class App extends Component {
     }
 }
 
-export default App
+export default connect(mapStateToProps, mapDispatchToProps)(App);
