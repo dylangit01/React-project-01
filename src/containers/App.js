@@ -10,7 +10,8 @@ import {setSearchField} from "../actions";
 
 const mapStateToProps = (state) => {
     return {
-        searchField: state.searchField
+        //
+        searchBox: state.iniSearchField
     }
 };
 
@@ -47,10 +48,10 @@ class App extends Component {
 
     render() {
         const {robots} = this.state;
-        const {searchField, onSearchChange} = this.props;
+        const {searchBox, onSearchChange} = this.props;
         const filteredRobots = robots.filter(robot => {
-            // return robot.name.toLowerCase().indexOf(searchField.toLowerCase()) > -1
-            return robot.name.toLowerCase().includes(searchField.toLowerCase())
+            // return robot.name.toLowerCase().indexOf(searchBox.toLowerCase()) > -1
+            return robot.name.toLowerCase().includes(searchBox.toLowerCase())
         });
         // Below if function is to show "Loading" when long time fetching from the web to get the data;
 
