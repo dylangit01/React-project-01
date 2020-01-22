@@ -1,26 +1,26 @@
 {
   "files": {
     "main.css": "/React-project-RobotFriends/static/css/main.2b98283c.chunk.css",
-    "main.js": "/React-project-RobotFriends/static/js/main.f6c13178.chunk.js",
-    "main.js.map": "/React-project-RobotFriends/static/js/main.f6c13178.chunk.js.map",
+    "main.js": "/React-project-RobotFriends/static/js/main.a1df43c4.chunk.js",
+    "main.js.map": "/React-project-RobotFriends/static/js/main.a1df43c4.chunk.js.map",
     "runtime-main.js": "/React-project-RobotFriends/static/js/runtime-main.a673131c.js",
     "runtime-main.js.map": "/React-project-RobotFriends/static/js/runtime-main.a673131c.js.map",
     "static/css/2.eb45ad44.chunk.css": "/React-project-RobotFriends/static/css/2.eb45ad44.chunk.css",
-    "static/js/2.a98415d0.chunk.js": "/React-project-RobotFriends/static/js/2.a98415d0.chunk.js",
-    "static/js/2.a98415d0.chunk.js.map": "/React-project-RobotFriends/static/js/2.a98415d0.chunk.js.map",
+    "static/js/2.7e4498e6.chunk.js": "/React-project-RobotFriends/static/js/2.7e4498e6.chunk.js",
+    "static/js/2.7e4498e6.chunk.js.map": "/React-project-RobotFriends/static/js/2.7e4498e6.chunk.js.map",
     "index.html": "/React-project-RobotFriends/index.html",
-    "precache-manifest.cc64cc1f9243d210b36bcb19daa65ce9.js": "/React-project-RobotFriends/precache-manifest.cc64cc1f9243d210b36bcb19daa65ce9.js",
+    "precache-manifest.add7fcd4c5d3dd156d0994e5124fbac5.js": "/React-project-RobotFriends/precache-manifest.add7fcd4c5d3dd156d0994e5124fbac5.js",
     "service-worker.js": "/React-project-RobotFriends/service-worker.js",
     "static/css/2.eb45ad44.chunk.css.map": "/React-project-RobotFriends/static/css/2.eb45ad44.chunk.css.map",
     "static/css/main.2b98283c.chunk.css.map": "/React-project-RobotFriends/static/css/main.2b98283c.chunk.css.map",
-    "static/js/2.a98415d0.chunk.js.LICENSE": "/React-project-RobotFriends/static/js/2.a98415d0.chunk.js.LICENSE",
+    "static/js/2.7e4498e6.chunk.js.LICENSE": "/React-project-RobotFriends/static/js/2.7e4498e6.chunk.js.LICENSE",
     "static/media/App.css": "/React-project-RobotFriends/static/media/SEGA.82e09f78.TTF"
   },
   "entrypoints": [
     "static/js/runtime-main.a673131c.js",
     "static/css/2.eb45ad44.chunk.css",
-    "static/js/2.a98415d0.chunk.js",
+    "static/js/2.7e4498e6.chunk.js",
     "static/css/main.2b98283c.chunk.css",
-    "static/js/main.f6c13178.chunk.js"
+    "static/js/main.a1df43c4.chunk.js"
   ]
 }
