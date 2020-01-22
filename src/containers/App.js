@@ -6,40 +6,41 @@ import './App.css';
 import Scroll from '../components/Scroll'
 import ErrorBoundry from "../components/ErrorBoundry";
 
-import {setSearchField} from "../actions";
+import {setSearchField, requestRobots} from "../actions";
 
 const mapStateToProps = (state) => {
     return {
-        //
-        searchBox: state.iniSearchField
+        searchBox: state.searchRobots.searchField,
+        robots: state.requestRobots.robots,
+        isPending: state.requestRobots.isPending,
+        error: state.requestRobots.error
     }
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onSearchChange: (event) => dispatch(setSearchField(event.target.value))
+        onSearchChange: (event) => dispatch(setSearchField(event.target.value)),
+        onRequestRobots: () => dispatch(requestRobots())
     }
 };
 
 
 class App extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            // in real project, data list is empty at the beginning, through fetch to update the state
-            robots: [],
-            // searchField: ''
-        }
-    }
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //         // in real project, data list is empty at the beginning, through fetch to update the state
+    //         robots: [],
+    //         // searchField: ''
+    //     }
+    // }
 
     // since below hook has been added, and once the state has been updated, the render() runs again; In this case, the robots list goes
     // from an empty array to a robot's list. And the virtual DOM notices there's a difference, and repaints the web browser to include
     // the robots. So the execution order is
     // constructor >> render() >> componentDidMount() >> render()
     componentDidMount() {
-        fetch('https://jsonplaceholder.typicode.com/users')
-            .then(res => res.json())
-            .then(users => this.setState({robots: users}))
+       this.props.onRequestRobots()
     }
 
     // onSearchChange = (event) => {
@@ -47,15 +48,15 @@ class App extends Component {
     // };
 
     render() {
-        const {robots} = this.state;
-        const {searchBox, onSearchChange} = this.props;
+        // const {robots} = this.state;
+        const {searchBox, onSearchChange, robots, isPending} = this.props;
         const filteredRobots = robots.filter(robot => {
             // return robot.name.toLowerCase().indexOf(searchBox.toLowerCase()) > -1
             return robot.name.toLowerCase().includes(searchBox.toLowerCase())
         });
         // Below if function is to show "Loading" when long time fetching from the web to get the data;
 
-        return !robots.length ?
+        return isPending ?
             <h1>Loading</h1> :
             <div className='tc'>
                 <h1 className='f1'>RoboFriends</h1>
