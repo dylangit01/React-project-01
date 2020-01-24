@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {connect} from 'react-redux';
 import CardList from "../components/CardList";
-import SearchBox from '../components/SearchBox';
+import { SearchBox } from '../components/SearchBox';
 import './App.css';
 import Scroll from '../components/Scroll'
 import ErrorBoundry from "../components/ErrorBoundry";
@@ -11,6 +11,7 @@ import {setSearchField, requestRobots} from "../actions";
 const mapStateToProps = (state) => {
     return {
         searchBox: state.searchRobots.searchField,
+
         robots: state.requestRobots.robots,
         isPending: state.requestRobots.isPending,
         error: state.requestRobots.error
@@ -60,7 +61,7 @@ class App extends Component {
             <h1>Loading</h1> :
             <div className='tc'>
                 <h1 className='f1'>RoboFriends</h1>
-                <SearchBox searchChange={onSearchChange}/>
+                <SearchBox placeholder='search robots!!' searchChange={onSearchChange}/>
 
                 {/*In React, one thing is called "children", and below <CardList/> is the children of <Scroll></Scroll>*/}
                 {/*"Scroll" can use "children" as a way to render its children*/}

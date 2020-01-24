@@ -1,12 +1,12 @@
 
-@font-face {
-    font-family: 'SEGA LOGO FONT';
-    font-style: normal;
-    font-weight: normal;
-    src: local('SEGA LOGO FONT'), url("SEGA.TTF") format('woff');
-}
+/*@font-face {*/
+/*    font-family: 'SEGA LOGO FONT';*/
+/*    font-style: normal;*/
+/*    font-weight: normal;*/
+/*    src: local('SEGA LOGO FONT'), url("SEGA.TTF") format('woff');*/
+/*}*/
 h1{
-    font-family: 'SEGA LOGO FONT', serif;
+    font-family: 'Press Start 2P', cursive;
     font-weight: 200;
     color: #0ccac4
 }
